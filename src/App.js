@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import list from "./Components/list";
+import List from "./Components/list";
 import Description from "./Components/description";
 
 function App() {
@@ -20,9 +20,9 @@ function App() {
         </ul>
       </div>
       <Switch>
-        <Route path="/list" component={list}></Route>
+        <Route path="/list" component={List}></Route>
         <Route path="/description" component={Description} />
-        <Route path="/" component={list}></Route>
+        <Route path="/" component={List}></Route>
       </Switch>
     </Router >
   );
