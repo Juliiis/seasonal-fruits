@@ -21,7 +21,7 @@ function App() {
       </div>
       <Switch>
         <Route path="/list" component={List}></Route>
-        <Route path="/description" component={Description} />
+        <Route path="/description/:id" component={Description} />
         <Route path="/" component={List}></Route>
       </Switch>
     </Router >
