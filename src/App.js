@@ -14,9 +14,6 @@ function App() {
           <li>
             <Link to="/list">List</Link>
           </li>
-          <li>
-            <Link to="/description">Description</Link>
-          </li>
         </ul>
       </div>
       <Switch>
