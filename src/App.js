@@ -10,11 +10,6 @@ function App() {
         <nav>
           <Link to="/">Seasonal Fruits</Link>
         </nav>
-        <ul>
-          <li>
-            <Link to="/list">List</Link>
-          </li>
-        </ul>
       </div>
       <Switch>
         <Route path="/list" component={List}></Route>
