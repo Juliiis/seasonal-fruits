@@ -14,6 +14,10 @@ function List() {
         setLoading(false)
     }, [month])
 
+    const handleMonthChange = (e) => {
+        setMonth(e.target.value)
+    }
+
     if (loading) {
         return 'Loading'
     }
@@ -21,6 +25,11 @@ function List() {
     return (
         <div>
             <h2>List</h2>
+            <select onChange={handleMonthChange} value={month}>
+                <option value="1">January</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
             <ul>
                 {fruits.map(fruit => (
                     <li key={fruit.id}>
