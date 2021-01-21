@@ -23,7 +23,7 @@ function List() {
         return 'Loading'
     }
 
-    const noFruitsInThisMonths = fruits.length === 0 
+    const noFruitsInThisMonth = fruits.length === 0 
 
     return (
         <div>
@@ -33,7 +33,7 @@ function List() {
                     <option value={index + 1}>{monthName}</option>
                 ))}
             </select>
-            {noFruitsInThisMonths && "No fruits found"}
+            {noFruitsInThisMonth && "No fruits found"}
             <ul>
                 {fruits.map(fruit => (
                     <li key={fruit.id}>
