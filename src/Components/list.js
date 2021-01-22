@@ -9,10 +9,17 @@ function List() {
     const [loading, setLoading] = useState(true)
     const [month, setMonth] = useState(currentMonth)
 
-    useEffect(async () => {
-        const response = await fetch(`/api/available-fruits?month=${month}`)
-        setFruits(await response.json())
-        setLoading(false)
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`/api/available-fruits?month=${month}`)
+                setFruits(await response.json())
+                setLoading(false)
+            } catch (error) {
+                setLoading(false)
+            }
+        }
+        fetchData()
     }, [month])
 
     const handleMonthChange = (e) => {
