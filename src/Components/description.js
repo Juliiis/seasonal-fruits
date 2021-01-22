@@ -1,38 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
 
 function Description() {
-    const { id } = useParams()
-    const [fruit, setFruit] = useState(null)
-    const [loading, setLoading] = useState(true)
+  const { id } = useParams();
+  const [fruit, setFruit] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`/api/fruit?id=${id}`)
-                setFruit(await response.json())
-            } catch (error) {
-                setFruit(null)
-            }
-            setLoading(false)
-        }
-        fetchData()
-    }, [id])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/api/fruit?id=${id}`);
+        setFruit(await response.json());
+      } catch (error) {
+        setFruit(null);
+      }
+      setLoading(false);
+    };
+    fetchData();
+  }, [id]);
 
-    if(loading){
-        return 'Loading'
-    }
+  if (loading) {
+    return "Loading";
+  }
 
-    if(!fruit){
-        return 'Fruit not found'
-    }
+  if (!fruit) {
+    return "Fruit not found";
+  }
 
-    return (
-        <div>
-            <Link to="/list">Back</Link>
+  return (
+    <div>
+      <Link to="/list">Back</Link>
 
-            <h2>{fruit.properties}</h2>
-        </div>
-    )
+      <h2>{fruit.properties}</h2>
+    </div>
+  );
 }
 export default Description;
