@@ -15,7 +15,7 @@ function List() {
                 const response = await fetch(`/api/available-fruits?month=${month}`)
                 setFruits(await response.json())
             } catch (error) {
-                setFruits(null)
+                setFruits([])
             }
             setLoading(false)
         }
