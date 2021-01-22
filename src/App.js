@@ -16,7 +16,7 @@ function App() {
         <Route path="/description/:id" component={Description} />
         <Route path="/" component={List}></Route>
       </Switch>
-    </Router >
+    </Router>
   );
 }
 
