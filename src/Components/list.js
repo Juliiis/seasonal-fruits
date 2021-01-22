@@ -14,10 +14,10 @@ function List() {
             try {
                 const response = await fetch(`/api/available-fruits?month=${month}`)
                 setFruits(await response.json())
-                setLoading(false)
             } catch (error) {
-                setLoading(false)
+                setFruits(null)
             }
+            setLoading(false)
         }
         fetchData()
     }, [month])
