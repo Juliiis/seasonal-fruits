@@ -11,10 +11,10 @@ function Description() {
             try {
                 const response = await fetch(`/api/fruit?id=${id}`)
                 setFruit(await response.json())
-                setLoading(false)
             } catch (error) {
-                setLoading(false)
+                setFruit(null)
             }
+            setLoading(false)
         }
         fetchData()
     }, [id])
