@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./list.css";
 
 const currentMonth = new Date().getMonth() + 1;
 const MONTH_NAMES = [
@@ -12,6 +13,7 @@ const MONTH_NAMES = [
   "July",
   "August",
   "September",
+  "October",
   "November",
   "December",
 ];
@@ -56,7 +58,14 @@ function List() {
       <ul>
         {fruits.map((fruit) => (
           <li key={fruit.id}>
-            <Link to={`/description/${fruit.id}`}>{fruit.name}</Link>
+            <Link to={`/description/${fruit.id}`}>
+              {fruit.name}
+              <img
+                src={`/fruits/${fruit.id}.svg`}
+                alt=""
+                className="fruitIcon"
+              ></img>
+            </Link>
           </li>
         ))}
       </ul>
